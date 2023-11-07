@@ -1,0 +1,6 @@
+{
+	"dataset": "datasets/imdb_movies_preprocessed.csv",
+	"csv_sep": ";",
+	"rating_col": "rating",
+	"review_col": "review"
+}

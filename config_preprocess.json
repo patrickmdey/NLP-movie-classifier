@@ -1,0 +1,11 @@
+{
+	"dataset": "datasets/imdb_movies.csv",
+	"balance": true,
+	"reduce_cols": true,
+	"clean": true,
+	"lower_case": false,
+	"csv_sep": ";",
+	"rating_col": "rating",
+	"review_col": "review",
+	"reduce_rating": true
+}
