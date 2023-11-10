@@ -5,3 +5,5 @@
 datasets
 .vscode
 *.pyc
+out/bert/imdb80-checkpoints
+out/bert/saved-models

@@ -25,7 +25,6 @@ def _remove_symbols_from_row(row):
     for symbol in permited_symbols:
         row = re.sub(rf"[{symbol}]+", symbol, row)
     # row = re.sub(r"[.]+", ".", row) # Trim multiple points to one
-    
     return row
 
 def remove_symbols_from_reviews(df):
