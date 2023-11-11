@@ -18,6 +18,8 @@ def classify(model, prompt, device, tokenizer):
     model.eval()
     outputs = model(input_ids).logits
 
+    print(model(input_ids).logits)
+
     return outputs.argmax(-1).item() + 1 # Add 1 because the ratings are 1-5 and the model outputs 0-4
 
 
@@ -32,9 +34,8 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     tokenizer.add_special_tokens({"pad_token": "[PAD]"})
 
-
     logger.info("Loading BERT model")
-    model_path = "out/bert/saved-models/8m-distilbert"
+    model_path = "out/bert/saved-models/imdb80-distilbert"
     model = AutoModelForSequenceClassification.from_pretrained(model_path, num_labels=5, pad_token_id=tokenizer.pad_token_id).to(device)
 
     """
