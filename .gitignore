@@ -7,3 +7,4 @@ datasets
 *.pyc
 out/bert/imdb80-checkpoints
 out/bert/saved-models
+!trainer_state.json

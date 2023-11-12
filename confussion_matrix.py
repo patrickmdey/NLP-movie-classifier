@@ -92,8 +92,14 @@ def solo_metrics(df, path):
     def confusion_row_to_percent(row):
         total = row.sum()
         return row.apply(lambda x: (x / total).round(4))
+
+    df = df[["epoch", "prediction", 'label']]
+    df = df[df["epoch"] == "5"]
+
     
-    calculate_results(df[["prediction", 'label']], confusion_dict)
+    
+    calculate_results(df, confusion_dict)
+
     
     confusion_df = pd.DataFrame(confusion_dict)
     confusion_df = confusion_df.apply(confusion_row_to_percent, axis=1)

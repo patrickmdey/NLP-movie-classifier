@@ -4,7 +4,7 @@ from utils import *
 from datetime import datetime
 from loguru import logger
 import time
-import os    
+import os
 
 
 class MyCallback(TrainerCallback):
@@ -61,7 +61,7 @@ def tokenize_dataset(tokenizer, dataset):
         return {"input_ids": tokenized["input_ids"], "attention_mask": tokenized["attention_mask"], "label": batch["label"]}
 
     # remove __index_level_0__ column
-    # dataset = dataset.remove_columns("__index_level_0__")
+    dataset = dataset.remove_columns("__index_level_0__")
 
     # Tokenize the dataset
     train_dataset = dataset["train"].map(tokenize_function, batched=True)
@@ -77,21 +77,19 @@ def main():
 
     dataset_path = "datasets/imdb_movies_preprocessed_train.csv"
     start_time = time.time()
-    device = "cuda"
+    device = "cpu"
     checkpoint = "roberta-base"
-
-    SPECIAL_PAD_TOKEN_ID = 1 #this is the roBERTa pad token id (<s>)
 
     logger.info("Loading dataset")
     dataset = get_review_dataset(dataset_path, separator=";",
-                                 text_col="review", label_col="rating")
+                                 text_col="review", label_col="rating", num_lines=100)
 
     # Load the tokenizer and tokenize the dataset
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     # sets the pad token to be ignored when computing the metrics for the training
-    # tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
     # Get the pad token ID
-    # pad_token_id = tokenizer.pad_token_id
+    pad_token_id = tokenizer('[PAD]')["input_ids"][0]
 
     # Tokenizes the dataset returning a dictionary of two datasets: train and test
     # Each dataset has the following features: text, label, input_ids and attention_mask
@@ -99,15 +97,38 @@ def main():
     tokenized_datasets = tokenize_dataset(tokenizer, dataset)
     logger.info("END\t|Tokeinizing dataset")
 
+    # for i, review in enumerate(tokenized_datasets["train"]["text"]):
+    #     if len(review) > 512:
+    #         logger.warning(
+    #             f"Review length exceeds model's maximum input length: {len(review)}")
+    #         tokenized_datasets["train"]["text"][i] = review[:512]
+
+    # for i, review in enumerate(tokenized_datasets["test"]["text"]):
+    #     if len(review) > 512:
+    #         logger.warning(
+    #             f"Review length exceeds model's maximum input length: {len(review)}")
+    #         tokenized_datasets["test"]["text"][i] = review[:512]
+
+    # for review in self.reviews:
+    #     tokenized_review = self.tokenizer(review["text"], return_tensors="pt", truncation=True)
+    #     input_ids = tokenized_review["input_ids"]
+    #     if len(input_ids[0]) > 512:
+    #         logger.warning(f"Review length exceeds model's maximum input length: {len(input_ids[0])}")
+
+    # Print or log the shapes of input_ids and attention_mask to check consistency
+    # for split in tokenized_datasets.keys():
+    #     for key in ["input_ids", "attention_mask"]:
+    #         lengths = [len(sample[key])
+    #                    for sample in tokenized_datasets[split]]
+    #         logger.info(f"{split} - {key} lengths: {lengths}")
+
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
     # Load the model
     logger.info("START\t| Loading RoBERTa model")
-
-    # logger.warning(f"PAD TOKEN ID:{pad_token_id-1}")
     model = AutoModelForSequenceClassification.from_pretrained(
         checkpoint, num_labels=5,
-        pad_token_id=SPECIAL_PAD_TOKEN_ID).to(device)
+        pad_token_id=pad_token_id).to(device)
     logger.info("END\t| Loading RoBERTa model")
 
     # Define the training arguments
@@ -119,8 +140,8 @@ def main():
         output_dir="out/roberta/imdb80-checkpoints/" + \
         datetime.now().strftime("%Y_%m_%d_%H_%M_%S"),
         save_strategy="epoch",
-        fp16=True,  # Only works with cuda
-        per_device_train_batch_size=16,
+        # fp16=True,  # Only works with cuda
+        per_device_train_batch_size=8,
         gradient_accumulation_steps=4,
         load_best_model_at_end=True,
         optim="adamw_torch",
@@ -149,8 +170,8 @@ def main():
         args=training_args,
         train_dataset=tokenized_datasets["train"],
         # TODO: check i think its not using it
-        eval_dataset=tokenized_datasets["test"],
-        callbacks=[callback]
+        eval_dataset=tokenized_datasets["train"],
+        # callbacks=[callback]
     )
 
     try:

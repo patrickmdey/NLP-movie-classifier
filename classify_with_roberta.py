@@ -14,7 +14,7 @@ def classify(model, prompt, device, tokenizer):
     Returns:
         -  The predicted rating
     """
-    input_ids = tokenizer.encode(prompt, return_tensors="pt",truncation=True).to(device)
+    input_ids = tokenizer.encode(prompt, return_tensors="pt",truncation=True, max_length=512).to(device)
     model.eval()
     outputs = model(input_ids).logits
 
@@ -26,17 +26,16 @@ def classify(model, prompt, device, tokenizer):
 if __name__ == "__main__":
 
     #TODO: device cuda for usage in pampero or cuda
-    checkpoint = "distilbert-base-uncased"
-    device = "cuda"
+    checkpoint = "roberta-base"
+    device = "cpu"
 
     logger.info("Loading tokenizer")
     # Load the tokenizer and tokenize the dataset
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
-    tokenizer.add_special_tokens({"pad_token": "[PAD]"})
 
     logger.info("Loading BERT model")
-    model_path = "out/bert/saved-models/imdb80-distilbert"
-    model = AutoModelForSequenceClassification.from_pretrained(model_path, num_labels=5, pad_token_id=tokenizer.pad_token_id).to(device)
+    model_path = "out/roberta/saved-models/imdb80-roberta"
+    model = AutoModelForSequenceClassification.from_pretrained(model_path, num_labels=5, pad_token_id=1).to(device)
 
     # """
     # Classify an entire dataset
