@@ -1,0 +1,284 @@
+2023-11-12 18:09:00.003 | INFO     | __main__:main:85 - Loading dataset
+
+Map:   0%|          | 0/212700 [00:00<?, ? examples/s]
+Map:   2%|▏         | 4328/212700 [00:00<00:04, 43078.84 examples/s]
+Map:   4%|▍         | 8865/212700 [00:00<00:04, 44415.94 examples/s]
+Map:   6%|▋         | 13321/212700 [00:00<00:04, 43995.68 examples/s]
+Map:   8%|▊         | 18000/212700 [00:00<00:05, 34588.58 examples/s]
+Map:  11%|█         | 22598/212700 [00:00<00:05, 38009.06 examples/s]
+Map:  13%|█▎        | 27059/212700 [00:00<00:04, 39989.82 examples/s]
+Map:  15%|█▍        | 31596/212700 [00:00<00:04, 41603.69 examples/s]
+Map:  18%|█▊        | 37835/212700 [00:00<00:04, 41597.35 examples/s]
+Map:  20%|█▉        | 42328/212700 [00:01<00:04, 42248.64 examples/s]
+Map:  22%|██▏       | 46993/212700 [00:01<00:03, 43470.99 examples/s]
+Map:  24%|██▍       | 51485/212700 [00:01<00:03, 43879.98 examples/s]
+Map:  26%|██▋       | 56000/212700 [00:01<00:03, 44152.02 examples/s]
+Map:  29%|██▊       | 60652/212700 [00:01<00:03, 44840.00 examples/s]
+Map:  32%|███▏      | 67474/212700 [00:01<00:03, 45082.99 examples/s]
+Map:  35%|███▍      | 73630/212700 [00:01<00:03, 41755.70 examples/s]
+Map:  37%|███▋      | 78101/212700 [00:01<00:03, 42474.83 examples/s]
+Map:  39%|███▉      | 82986/212700 [00:02<00:03, 37295.88 examples/s]
+Map:  41%|████      | 87442/212700 [00:02<00:03, 39023.05 examples/s]
+Map:  43%|████▎     | 92000/212700 [00:02<00:02, 40553.08 examples/s]
+Map:  45%|████▌     | 96688/212700 [00:02<00:02, 42230.37 examples/s]
+Map:  48%|████▊     | 101265/212700 [00:02<00:02, 42858.05 examples/s]
+Map:  50%|████▉     | 105909/212700 [00:02<00:02, 43859.57 examples/s]
+Map:  52%|█████▏    | 110408/212700 [00:02<00:02, 44179.43 examples/s]
+Map:  54%|█████▍    | 115000/212700 [00:02<00:02, 44367.39 examples/s]
+Map:  56%|█████▋    | 119646/212700 [00:02<00:02, 44974.29 examples/s]
+Map:  59%|█████▉    | 126472/212700 [00:02<00:01, 45176.85 examples/s]
+Map:  63%|██████▎   | 133342/212700 [00:03<00:01, 45374.30 examples/s]
+Map:  66%|██████▌   | 140000/212700 [00:03<00:01, 39506.47 examples/s]
+Map:  68%|██████▊   | 144675/212700 [00:03<00:01, 41093.06 examples/s]
+Map:  70%|███████   | 149000/212700 [00:03<00:01, 37859.44 examples/s]
+Map:  72%|███████▏  | 153686/212700 [00:03<00:01, 39987.83 examples/s]
+Map:  74%|███████▍  | 158356/212700 [00:03<00:01, 41401.25 examples/s]
+Map:  77%|███████▋  | 163000/212700 [00:03<00:01, 42473.40 examples/s]
+Map:  79%|███████▉  | 167672/212700 [00:03<00:01, 43628.22 examples/s]
+Map:  81%|████████  | 172292/212700 [00:04<00:00, 43985.90 examples/s]
+Map:  83%|████████▎ | 176891/212700 [00:04<00:00, 44551.40 examples/s]
+Map:  86%|████████▋ | 183534/212700 [00:04<00:00, 44446.62 examples/s]
+Map:  89%|████████▉ | 190234/212700 [00:04<00:00, 44449.08 examples/s]
+Map:  93%|█████████▎| 196786/212700 [00:04<00:00, 38322.00 examples/s]
+Map:  95%|█████████▍| 201344/212700 [00:04<00:00, 39678.32 examples/s]
+Map:  97%|█████████▋| 205973/212700 [00:04<00:00, 41228.83 examples/s]
+Map:  99%|█████████▉| 210465/212700 [00:05<00:00, 42153.48 examples/s]
+Map: 100%|██████████| 212700/212700 [00:05<00:00, 41978.88 examples/s]
+2023-11-12 18:09:07.813 | INFO     | __main__:main:98 - START	|Tokeinizing dataset
+
+Map:   0%|          | 0/170160 [00:00<?, ? examples/s]
+Map:   1%|          | 2000/170160 [00:00<00:10, 15436.24 examples/s]
+Map:   2%|▏         | 4000/170160 [00:00<00:11, 14730.95 examples/s]
+Map:   4%|▎         | 6000/170160 [00:00<00:11, 14506.02 examples/s]
+Map:   5%|▍         | 8000/170160 [00:00<00:11, 14456.17 examples/s]
+Map:   6%|▌         | 10000/170160 [00:00<00:10, 14565.56 examples/s]
+Map:   7%|▋         | 12000/170160 [00:00<00:10, 14823.60 examples/s]
+Map:   8%|▊         | 14000/170160 [00:00<00:10, 14342.38 examples/s]
+Map:   9%|▉         | 16000/170160 [00:01<00:10, 14647.61 examples/s]
+Map:  11%|█         | 18000/170160 [00:01<00:11, 12842.71 examples/s]
+Map:  12%|█▏        | 20000/170160 [00:01<00:10, 13779.61 examples/s]
+Map:  13%|█▎        | 22000/170160 [00:01<00:10, 14042.40 examples/s]
+Map:  14%|█▍        | 24000/170160 [00:01<00:10, 14603.53 examples/s]
+Map:  15%|█▌        | 26000/170160 [00:01<00:09, 14961.28 examples/s]
+Map:  16%|█▋        | 28000/170160 [00:01<00:09, 14413.83 examples/s]
+Map:  18%|█▊        | 30000/170160 [00:02<00:09, 14545.41 examples/s]
+Map:  19%|█▉        | 32000/170160 [00:02<00:09, 14994.96 examples/s]
+Map:  20%|█▉        | 34000/170160 [00:02<00:08, 15286.03 examples/s]
+Map:  21%|██        | 36000/170160 [00:02<00:09, 14859.21 examples/s]
+Map:  22%|██▏       | 38000/170160 [00:02<00:08, 15067.33 examples/s]
+Map:  24%|██▎       | 40000/170160 [00:02<00:08, 15442.78 examples/s]
+Map:  25%|██▍       | 42000/170160 [00:02<00:08, 15190.35 examples/s]
+Map:  26%|██▌       | 44000/170160 [00:02<00:08, 15420.20 examples/s]
+Map:  27%|██▋       | 46000/170160 [00:03<00:07, 15637.91 examples/s]
+Map:  28%|██▊       | 48000/170160 [00:03<00:07, 15816.58 examples/s]
+Map:  29%|██▉       | 50000/170160 [00:03<00:08, 13513.71 examples/s]
+Map:  31%|███       | 52000/170160 [00:03<00:08, 14128.26 examples/s]
+Map:  32%|███▏      | 54000/170160 [00:03<00:08, 14267.91 examples/s]
+Map:  33%|███▎      | 56000/170160 [00:03<00:08, 14018.97 examples/s]
+Map:  34%|███▍      | 58000/170160 [00:03<00:07, 14539.43 examples/s]
+Map:  35%|███▌      | 60000/170160 [00:04<00:07, 14980.06 examples/s]
+Map:  36%|███▋      | 62000/170160 [00:04<00:07, 14787.54 examples/s]
+Map:  38%|███▊      | 64000/170160 [00:04<00:07, 14830.37 examples/s]
+Map:  39%|███▉      | 66000/170160 [00:04<00:06, 15027.39 examples/s]
+Map:  40%|███▉      | 68000/170160 [00:04<00:06, 15198.99 examples/s]
+Map:  41%|████      | 70000/170160 [00:04<00:06, 15340.39 examples/s]
+Map:  42%|████▏     | 72000/170160 [00:04<00:06, 15518.81 examples/s]
+Map:  43%|████▎     | 74000/170160 [00:05<00:06, 15300.37 examples/s]
+Map:  45%|████▍     | 76000/170160 [00:05<00:07, 13386.14 examples/s]
+Map:  46%|████▌     | 78000/170160 [00:05<00:06, 14038.74 examples/s]
+Map:  47%|████▋     | 80000/170160 [00:05<00:06, 14558.97 examples/s]
+Map:  48%|████▊     | 82000/170160 [00:05<00:05, 14911.24 examples/s]
+Map:  49%|████▉     | 84000/170160 [00:05<00:05, 15069.81 examples/s]
+Map:  51%|█████     | 86000/170160 [00:05<00:05, 14968.51 examples/s]
+Map:  52%|█████▏    | 88000/170160 [00:05<00:05, 15293.60 examples/s]
+Map:  53%|█████▎    | 90000/170160 [00:06<00:05, 14772.97 examples/s]
+Map:  54%|█████▍    | 92000/170160 [00:06<00:05, 15059.66 examples/s]
+Map:  55%|█████▌    | 94000/170160 [00:06<00:04, 15238.02 examples/s]
+Map:  56%|█████▋    | 96000/170160 [00:06<00:04, 15501.05 examples/s]
+Map:  58%|█████▊    | 98000/170160 [00:06<00:04, 15368.48 examples/s]
+Map:  59%|█████▉    | 100000/170160 [00:06<00:05, 13275.65 examples/s]
+Map:  60%|█████▉    | 102000/170160 [00:06<00:04, 13951.49 examples/s]
+Map:  61%|██████    | 104000/170160 [00:07<00:04, 14406.98 examples/s]
+Map:  62%|██████▏   | 106000/170160 [00:07<00:04, 14767.38 examples/s]
+Map:  63%|██████▎   | 108000/170160 [00:07<00:04, 15160.74 examples/s]
+Map:  65%|██████▍   | 110000/170160 [00:07<00:03, 15338.83 examples/s]
+Map:  66%|██████▌   | 112000/170160 [00:07<00:03, 15518.14 examples/s]
+Map:  67%|██████▋   | 114000/170160 [00:07<00:03, 14132.43 examples/s]
+Map:  68%|██████▊   | 116000/170160 [00:07<00:03, 14743.80 examples/s]
+Map:  69%|██████▉   | 118000/170160 [00:08<00:03, 15112.97 examples/s]
+Map:  71%|███████   | 120000/170160 [00:08<00:03, 15177.66 examples/s]
+Map:  72%|███████▏  | 122000/170160 [00:08<00:03, 15283.37 examples/s]
+Map:  73%|███████▎  | 124000/170160 [00:08<00:03, 12687.14 examples/s]
+Map:  74%|███████▍  | 126000/170160 [00:08<00:03, 13311.98 examples/s]
+Map:  75%|███████▌  | 128000/170160 [00:08<00:03, 14043.03 examples/s]
+Map:  76%|███████▋  | 130000/170160 [00:08<00:02, 14395.83 examples/s]
+Map:  78%|███████▊  | 132000/170160 [00:09<00:02, 14340.95 examples/s]
+Map:  79%|███████▊  | 134000/170160 [00:09<00:02, 14544.10 examples/s]
+Map:  80%|███████▉  | 136000/170160 [00:09<00:02, 14814.89 examples/s]
+Map:  81%|████████  | 138000/170160 [00:09<00:02, 15009.27 examples/s]
+Map:  82%|████████▏ | 140000/170160 [00:09<00:02, 14962.39 examples/s]
+Map:  83%|████████▎ | 142000/170160 [00:09<00:01, 15237.55 examples/s]
+Map:  85%|████████▍ | 144000/170160 [00:09<00:01, 15234.24 examples/s]
+Map:  86%|████████▌ | 146000/170160 [00:09<00:01, 15436.44 examples/s]
+Map:  87%|████████▋ | 148000/170160 [00:10<00:01, 13252.65 examples/s]
+Map:  88%|████████▊ | 150000/170160 [00:10<00:01, 13772.25 examples/s]
+Map:  89%|████████▉ | 152000/170160 [00:10<00:01, 14219.16 examples/s]
+Map:  91%|█████████ | 154000/170160 [00:10<00:01, 14633.41 examples/s]
+Map:  92%|█████████▏| 156000/170160 [00:10<00:00, 15048.09 examples/s]
+Map:  93%|█████████▎| 158000/170160 [00:10<00:00, 15023.40 examples/s]
+Map:  94%|█████████▍| 160000/170160 [00:10<00:00, 15274.38 examples/s]
+Map:  95%|█████████▌| 162000/170160 [00:11<00:00, 15401.15 examples/s]
+Map:  96%|█████████▋| 164000/170160 [00:11<00:00, 15584.10 examples/s]
+Map:  98%|█████████▊| 166000/170160 [00:11<00:00, 15767.30 examples/s]
+Map:  99%|█████████▊| 168000/170160 [00:11<00:00, 15851.10 examples/s]
+Map: 100%|█████████▉| 170000/170160 [00:11<00:00, 15890.71 examples/s]
+Map: 100%|██████████| 170160/170160 [00:11<00:00, 14749.27 examples/s]
+
+Map:   0%|          | 0/42540 [00:00<?, ? examples/s]
+Map:   5%|▍         | 2000/42540 [00:00<00:03, 10307.61 examples/s]
+Map:   9%|▉         | 4000/42540 [00:00<00:02, 12928.17 examples/s]
+Map:  14%|█▍        | 6000/42540 [00:00<00:02, 14128.40 examples/s]
+Map:  19%|█▉        | 8000/42540 [00:00<00:02, 14638.44 examples/s]
+Map:  24%|██▎       | 10000/42540 [00:00<00:02, 15115.97 examples/s]
+Map:  28%|██▊       | 12000/42540 [00:00<00:02, 15051.60 examples/s]
+Map:  33%|███▎      | 14000/42540 [00:00<00:01, 15181.38 examples/s]
+Map:  38%|███▊      | 16000/42540 [00:01<00:01, 15029.73 examples/s]
+Map:  42%|████▏     | 18000/42540 [00:01<00:01, 15429.57 examples/s]
+Map:  47%|████▋     | 20000/42540 [00:01<00:01, 15611.77 examples/s]
+Map:  52%|█████▏    | 22000/42540 [00:01<00:01, 15671.09 examples/s]
+Map:  56%|█████▋    | 24000/42540 [00:01<00:01, 15567.10 examples/s]
+Map:  61%|██████    | 26000/42540 [00:01<00:01, 15294.87 examples/s]
+Map:  66%|██████▌   | 28000/42540 [00:01<00:00, 15309.88 examples/s]
+Map:  71%|███████   | 30000/42540 [00:02<00:00, 14996.05 examples/s]
+Map:  75%|███████▌  | 32000/42540 [00:02<00:00, 13123.11 examples/s]
+Map:  80%|███████▉  | 34000/42540 [00:02<00:00, 13964.49 examples/s]
+Map:  85%|████████▍ | 36000/42540 [00:02<00:00, 14371.18 examples/s]
+Map:  89%|████████▉ | 38000/42540 [00:02<00:00, 14668.33 examples/s]
+Map:  94%|█████████▍| 40000/42540 [00:02<00:00, 14925.10 examples/s]
+Map:  99%|█████████▊| 42000/42540 [00:02<00:00, 15095.50 examples/s]
+Map: 100%|██████████| 42540/42540 [00:02<00:00, 14760.61 examples/s]
+2023-11-12 18:09:22.269 | INFO     | __main__:main:100 - END	|Tokeinizing dataset
+2023-11-12 18:09:22.269 | INFO     | __main__:main:105 - START	| Loading RoBERTa model
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at roberta-base and are newly initialized: ['classifier.dense.weight', 'classifier.dense.bias', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+2023-11-12 18:09:23.646 | INFO     | __main__:main:111 - END	| Loading RoBERTa model
+2023-11-12 18:09:23.646 | INFO     | __main__:main:114 - Setting training arguments
+2023-11-12 18:09:24.034 | INFO     | __main__:main:144 - Setting trainer
+2023-11-12 18:09:24.038 | INFO     | __main__:main:157 - Start Training
+2023-11-12 18:26:16.391 | INFO     | __main__:on_epoch_end:24 - Finished epoch 0
+2023-11-12 18:32:36.634 | ERROR    | __main__:on_epoch_end:45 - Error classifying review, skipping...
+2023-11-12 18:58:59.583 | INFO     | __main__:on_epoch_end:24 - Finished epoch 1
+2023-11-12 19:05:24.469 | ERROR    | __main__:on_epoch_end:45 - Error classifying review, skipping...
+2023-11-12 19:31:26.256 | INFO     | __main__:on_epoch_end:24 - Finished epoch 2
+2023-11-12 19:37:42.162 | ERROR    | __main__:on_epoch_end:45 - Error classifying review, skipping...
+2023-11-12 20:04:05.385 | INFO     | __main__:on_epoch_end:24 - Finished epoch 3
+2023-11-12 20:10:17.701 | ERROR    | __main__:on_epoch_end:45 - Error classifying review, skipping...
+2023-11-12 20:36:15.904 | INFO     | __main__:on_epoch_end:24 - Finished epoch 4
+2023-11-12 20:42:25.977 | ERROR    | __main__:on_epoch_end:45 - Error classifying review, skipping...
+2023-11-12 20:51:35.274 | INFO     | __main__:main:159 - End Training
+2023-11-12 20:51:35.786 | INFO     | __main__:main:163 - Model saved
+2023-11-12 20:51:35.786 | INFO     | __main__:main:172 - 9755.7832736969 seconds elapsed
+{'loss': 1.4186, 'learning_rate': 7.509405568096314e-06, 'epoch': 0.19}
+{'loss': 1.176, 'learning_rate': 1.5018811136192628e-05, 'epoch': 0.38}
+{'loss': 1.143, 'learning_rate': 1.9719087032856784e-05, 'epoch': 0.56}
+{'loss': 1.1151, 'learning_rate': 1.888303653540674e-05, 'epoch': 0.75}
+{'loss': 1.1034, 'learning_rate': 1.8046986037956692e-05, 'epoch': 0.94}
+{'eval_loss': 1.0953912734985352, 'eval_runtime': 97.4864, 'eval_samples_per_second': 436.368, 'eval_steps_per_second': 54.551, 'epoch': 1.0}
+{'loss': 1.0551, 'learning_rate': 1.721260764150155e-05, 'epoch': 1.13}
+{'loss': 1.0282, 'learning_rate': 1.6376557144051503e-05, 'epoch': 1.32}
+{'loss': 1.0222, 'learning_rate': 1.5540506646601456e-05, 'epoch': 1.5}
+{'loss': 1.0134, 'learning_rate': 1.4704456149151408e-05, 'epoch': 1.69}
+{'loss': 1.0197, 'learning_rate': 1.3868405651701364e-05, 'epoch': 1.88}
+{'eval_loss': 1.0339012145996094, 'eval_runtime': 96.7508, 'eval_samples_per_second': 439.686, 'eval_steps_per_second': 54.966, 'epoch': 2.0}
+{'loss': 0.9858, 'learning_rate': 1.3032355154251318e-05, 'epoch': 2.07}
+{'loss': 0.9371, 'learning_rate': 1.2197976757796173e-05, 'epoch': 2.26}
+{'loss': 0.9497, 'learning_rate': 1.1361926260346125e-05, 'epoch': 2.44}
+{'loss': 0.9462, 'learning_rate': 1.052587576289608e-05, 'epoch': 2.63}
+{'loss': 0.9385, 'learning_rate': 9.689825265446033e-06, 'epoch': 2.82}
+{'eval_loss': 1.049217700958252, 'eval_runtime': 97.4475, 'eval_samples_per_second': 436.543, 'eval_steps_per_second': 54.573, 'epoch': 3.0}
+{'loss': 0.9399, 'learning_rate': 8.853774767995987e-06, 'epoch': 3.01}
+{'loss': 0.8802, 'learning_rate': 8.017724270545942e-06, 'epoch': 3.2}
+{'loss': 0.876, 'learning_rate': 7.181673773095895e-06, 'epoch': 3.39}
+{'loss': 0.8745, 'learning_rate': 6.345623275645849e-06, 'epoch': 3.57}
+{'loss': 0.889, 'learning_rate': 5.509572778195803e-06, 'epoch': 3.76}
+{'loss': 0.8748, 'learning_rate': 4.673522280745757e-06, 'epoch': 3.95}
+{'eval_loss': 1.06884765625, 'eval_runtime': 96.2477, 'eval_samples_per_second': 441.985, 'eval_steps_per_second': 55.253, 'epoch': 4.0}
+{'loss': 0.8433, 'learning_rate': 3.839143884290612e-06, 'epoch': 4.14}
+{'loss': 0.8328, 'learning_rate': 3.0030933868405655e-06, 'epoch': 4.33}
+{'loss': 0.8225, 'learning_rate': 2.1670428893905193e-06, 'epoch': 4.51}
+{'loss': 0.8322, 'learning_rate': 1.3309923919404733e-06, 'epoch': 4.7}
+{'loss': 0.8255, 'learning_rate': 4.966139954853273e-07, 'epoch': 4.89}
+{'eval_loss': 1.0937650203704834, 'eval_runtime': 97.6925, 'eval_samples_per_second': 435.448, 'eval_steps_per_second': 54.436, 'epoch': 5.0}
+{'train_runtime': 9731.1534, 'train_samples_per_second': 87.431, 'train_steps_per_second': 1.366, 'train_loss': 0.9712939443939875, 'epoch': 5.0}
+|===========================================================================|
+|                  PyTorch CUDA memory summary, device ID 0                 |
+|---------------------------------------------------------------------------|
+|            CUDA OOMs: 0            |        cudaMalloc retries: 0         |
+|===========================================================================|
+|        Metric         | Cur Usage  | Peak Usage | Tot Alloc  | Tot Freed  |
+|---------------------------------------------------------------------------|
+| Allocated memory      |   1449 MiB |   4524 MiB | 650616 GiB | 650615 GiB |
+|       from large pool |   1447 MiB |   4521 MiB | 607134 GiB | 607133 GiB |
+|       from small pool |      1 MiB |    151 MiB |  43482 GiB |  43482 GiB |
+|---------------------------------------------------------------------------|
+| Active memory         |   1449 MiB |   4524 MiB | 650616 GiB | 650615 GiB |
+|       from large pool |   1447 MiB |   4521 MiB | 607134 GiB | 607133 GiB |
+|       from small pool |      1 MiB |    151 MiB |  43482 GiB |  43482 GiB |
+|---------------------------------------------------------------------------|
+| Requested memory      |   1442 MiB |   4450 MiB | 635621 GiB | 635620 GiB |
+|       from large pool |   1441 MiB |   4448 MiB | 592149 GiB | 592148 GiB |
+|       from small pool |      1 MiB |    151 MiB |  43471 GiB |  43471 GiB |
+|---------------------------------------------------------------------------|
+| GPU reserved memory   |   5006 MiB |   5006 MiB |   5006 MiB |      0 B   |
+|       from large pool |   4766 MiB |   4766 MiB |   4766 MiB |      0 B   |
+|       from small pool |    240 MiB |    240 MiB |    240 MiB |      0 B   |
+|---------------------------------------------------------------------------|
+| Non-releasable memory | 166631 KiB |   1015 MiB | 594600 GiB | 594600 GiB |
+|       from large pool | 164032 KiB |   1001 MiB | 548765 GiB | 548765 GiB |
+|       from small pool |   2599 KiB |    138 MiB |  45835 GiB |  45835 GiB |
+|---------------------------------------------------------------------------|
+| Allocations           |     609    |    1487    |  253164 K  |  253163 K  |
+|       from large pool |     227    |     597    |   95313 K  |   95313 K  |
+|       from small pool |     382    |    1039    |  157850 K  |  157849 K  |
+|---------------------------------------------------------------------------|
+| Active allocs         |     609    |    1487    |  253164 K  |  253163 K  |
+|       from large pool |     227    |     597    |   95313 K  |   95313 K  |
+|       from small pool |     382    |    1039    |  157850 K  |  157849 K  |
+|---------------------------------------------------------------------------|
+| GPU reserved segments |     267    |     267    |     267    |       0    |
+|       from large pool |     147    |     147    |     147    |       0    |
+|       from small pool |     120    |     120    |     120    |       0    |
+|---------------------------------------------------------------------------|
+| Non-releasable allocs |      65    |     317    |  126020 K  |  126020 K  |
+|       from large pool |      52    |     126    |   66016 K  |   66016 K  |
+|       from small pool |      13    |     255    |   60003 K  |   60003 K  |
+|---------------------------------------------------------------------------|
+| Oversize allocations  |       0    |       0    |       0    |       0    |
+|---------------------------------------------------------------------------|
+| Oversize GPU segments |       0    |       0    |       0    |       0    |
+|===========================================================================|
+
