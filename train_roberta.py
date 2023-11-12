@@ -4,7 +4,8 @@ from utils import *
 from datetime import datetime
 from loguru import logger
 import time
-import os
+import os    
+
 
 class MyCallback(TrainerCallback):
     def __init__(self, tokenizer, device):
@@ -46,11 +47,21 @@ class MyCallback(TrainerCallback):
 
 def tokenize_dataset(tokenizer, dataset):
     def tokenize_function(batch):
-        tokenized = tokenizer(batch["text"], padding=True, truncation=True, max_length=511)
+        for i, review in enumerate(batch["text"]):
+            if len(review) > 512:
+                logger.warning(
+                    f"Review length exceeds model's maximum input length: {len(review)}")
+                batch["text"][i] = review[:512]
+        
+        for i, review in enumerate(batch["text"]):
+            if len(review) > 512:
+                logger.error("didn't fix it")
+        tokenized = tokenizer(
+            batch["text"], padding=True, truncation=True, max_length=512)
         return {"input_ids": tokenized["input_ids"], "attention_mask": tokenized["attention_mask"], "label": batch["label"]}
-    
-    #remove __index_level_0__ column
-    dataset = dataset.remove_columns("__index_level_0__")
+
+    # remove __index_level_0__ column
+    # dataset = dataset.remove_columns("__index_level_0__")
 
     # Tokenize the dataset
     train_dataset = dataset["train"].map(tokenize_function, batched=True)
@@ -69,16 +80,18 @@ def main():
     device = "cuda"
     checkpoint = "roberta-base"
 
+    SPECIAL_PAD_TOKEN_ID = 1 #this is the roBERTa pad token id (<s>)
+
     logger.info("Loading dataset")
     dataset = get_review_dataset(dataset_path, separator=";",
-                                 text_col="review", label_col="rating", num_lines=100)
+                                 text_col="review", label_col="rating")
 
     # Load the tokenizer and tokenize the dataset
     tokenizer = AutoTokenizer.from_pretrained(checkpoint)
     # sets the pad token to be ignored when computing the metrics for the training
-    tokenizer.add_special_tokens({'pad_token': '[PAD]'})
+    # tokenizer.add_special_tokens({'pad_token': '[PAD]'})
     # Get the pad token ID
-    pad_token_id = tokenizer('[PAD]')["input_ids"][0]
+    # pad_token_id = tokenizer.pad_token_id
 
     # Tokenizes the dataset returning a dictionary of two datasets: train and test
     # Each dataset has the following features: text, label, input_ids and attention_mask
@@ -86,20 +99,15 @@ def main():
     tokenized_datasets = tokenize_dataset(tokenizer, dataset)
     logger.info("END\t|Tokeinizing dataset")
 
-    # Print or log the shapes of input_ids and attention_mask to check consistency
-    for split in tokenized_datasets.keys():
-        for key in ["input_ids", "attention_mask"]:
-            lengths = [len(sample[key])
-                       for sample in tokenized_datasets[split]]
-            logger.info(f"{split} - {key} lengths: {lengths}")
-
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
     # Load the model
     logger.info("START\t| Loading RoBERTa model")
+
+    # logger.warning(f"PAD TOKEN ID:{pad_token_id-1}")
     model = AutoModelForSequenceClassification.from_pretrained(
         checkpoint, num_labels=5,
-        pad_token_id=pad_token_id).to(device)
+        pad_token_id=SPECIAL_PAD_TOKEN_ID).to(device)
     logger.info("END\t| Loading RoBERTa model")
 
     # Define the training arguments
@@ -141,7 +149,7 @@ def main():
         args=training_args,
         train_dataset=tokenized_datasets["train"],
         # TODO: check i think its not using it
-        eval_dataset=tokenized_datasets["train"],
+        eval_dataset=tokenized_datasets["test"],
         callbacks=[callback]
     )
 
