@@ -4,6 +4,7 @@ from loguru import logger
 import time
 import os
 import torch
+import pandas as pd
 from utils import get_review_dataset
 
 
@@ -36,6 +37,17 @@ class MyCallback(TrainerCallback):
                 f.write(
                     f"{self.epochs};{review['text']};{review['label']};{prediction}\n")
 
+def tokenize_dataset(tokenizer, dataset):
+    def tokenize_function(batch):
+        tokenized = tokenizer(batch["text"], padding=True, truncation=True)
+        return {"input_ids": tokenized["input_ids"], "attention_mask": tokenized["attention_mask"], "label": batch["label"]}
+
+    # Tokenize the dataset
+    train_dataset = dataset["train"].map(tokenize_function, batched=True)
+    test_dataset = dataset["test"].map(tokenize_function, batched=True)
+
+    return {"train": train_dataset, "test": test_dataset}
+
 
 def main():
     start_time = time.time()
@@ -53,8 +65,11 @@ def main():
 
     # Tokenizes the dataset
     logger.info("Tokenizing dataset")
-    tokenized_datasets = tokenizer(
-        dataset["train"]["text"], padding=True, truncation=True, return_tensors="pt")
+
+    tokenized_datasets = tokenize_dataset(tokenizer, dataset)
+
+    # tokenized_datasets = tokenizer(
+    #     dataset["train"]["text"], padding=True, truncation=True, return_tensors="pt")
 
     data_collator = DataCollatorWithPadding(tokenizer=tokenizer)
 
@@ -86,10 +101,9 @@ def main():
         do_eval=True,
     )
 
-    reviews = [
-        {"text": "Your review text here", "label": 1},
-        # Add more reviews as needed
-    ]
+    df = pd.read_csv("datasets/imdb_movies_preprocessed_test.csv", sep=";", encoding="utf-8")
+    df.rename(columns={"review": "text", "rating": "label"}, inplace=True)
+    reviews = df.to_dict("records")
 
     callback = MyCallback(tokenizer=tokenizer, device=device, reviews=reviews)
 
