@@ -7,8 +7,9 @@ from loguru import logger
 
 if __name__ == "__main__":
 
+
     # PATH = "out/roberta/imdb80-checkpoints/2023_11_12_18_09_23"
-    PATH = "out/bert/imdb80-checkpoints/20231109_171816"
+    PATH = "out/bert/imdb80-checkpoints/20231112_153553"
 
     trainer_state_files = []
 
@@ -38,6 +39,7 @@ if __name__ == "__main__":
                 eval_loss = entry["eval_loss"]
                 eval_epoch = entry["epoch"]
                 epoch_eval_loss.append(
+
                     {"epoch": eval_epoch, "loss": eval_loss})
             else:
                 loss = entry["loss"]
@@ -50,7 +52,7 @@ if __name__ == "__main__":
     # plot loss evolution over epochs
     for checkpoint in checkpoint_losses:
 
-        path = f"out/bert/loss_plots/imdb80-checkpoints/{checkpoint+1}"
+        path = f"out/roberta/loss_plots/imdb80-checkpoints/{checkpoint+1}"
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -91,4 +93,4 @@ if __name__ == "__main__":
     plt.legend()
     plt.tight_layout()
     plt.savefig(
-        "out/bert/loss_plots/imdb80-checkpoints/loss_evolution_all_checkpoints.png")
+        "out/roberta/loss_plots/imdb80-checkpoints/loss_evolution_all_checkpoints.png")

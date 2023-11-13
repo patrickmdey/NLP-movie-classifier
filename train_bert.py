@@ -1,4 +1,5 @@
 import torch
+from sklearn.discriminant_analysis import softmax as sk_softmax
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, DataCollatorWithPadding, Trainer, TrainingArguments, TrainerCallback, TrainerState, TrainerControl
 from utils import *
 from datetime import datetime
@@ -38,10 +39,17 @@ class MyCallback(TrainerCallback):
                         review["text"], return_tensors="pt", truncation=True, max_length=512).to(self.device)
                     current_model.eval()
                     outputs = current_model(input_ids).logits
-                    # logger.info("Review: {}, Label: {}, Prediction: {}".format(
-                    #     review["text"], review["label"], outputs.argmax(-1).item() + 1))
+
+                    logger.info(f"Logits: {outputs}")
+
+                    cpu_outputs = outputs.cpu()
+
+                    softmax_probs = sk_softmax(cpu_outputs.detach().numpy())
+
+                    logger.info(f"Softmax: {softmax_probs}")
+
                     f.write(
-                        f"{self.epochs};{review['text']};{review['label']};{outputs.argmax(-1).item() + 1}\n")
+                        f"{self.epochs};{review['text']};{review['label']};{softmax_probs.argmax(-1).item() + 1}\n")
                 except Exception as e:
                     logger.error("Error classifying review, skipping...")
 
